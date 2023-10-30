@@ -6,7 +6,7 @@ import java.lang.*;
 
 public class ConcatString {
     public int countSymbols(String str) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             throw new IllegalArgumentException("ОШИБКА! Передана пустая строка!");
         }
         return str.replaceAll("\\s", "").length();
@@ -20,17 +20,16 @@ public class ConcatString {
             System.out.println("Строки равны");
             return true;
         } else {
-            java.time.LocalDateTime currentDateTime = java.time.LocalDateTime.now();
-            System.out.println(currentDateTime);
+            System.out.println(java.time.LocalDateTime.now());
             return false;
         }
     }
 
     public String concat(String str1, String str2) {
-        if (str2 == null || str2.length() == 0) {
+        if (str2 == null || str2.isEmpty()) {
             throw new IllegalCallerException("Нельзя клеить т.к вторая строка пустая");
         }
-        if (str1 == null || str1.length() == 0) {
+        if (str1 == null || str1.isEmpty()) {
             throw new IllegalCallerException("Нельзя клеить т.к первая строка пустая");
         }
         return str1.concat(str2);
