@@ -5,17 +5,26 @@ import java.lang.*;
 
 
 public class ConcatString {
-    public int countSymbols(String str) {
-        if (str == null || str.isEmpty()) {
-            throw new IllegalArgumentException("ОШИБКА! Передана пустая строка!");
+    private void sravnenieStr(String str1, String str2) {
+        if (str1 == null || str1.isEmpty()) {
+            throw new IllegalCallerException("Первая строка пустая");
         }
-        return str.replaceAll("\\s", "").length();
+        if (str2 == null || str2.isEmpty()) {
+            throw new IllegalCallerException("Вторая строка пустая");
+        }
+    }
+    private void sravnenieStr1(String str1) {
+        if (str1 == null || str1.isEmpty()) {
+            throw new IllegalCallerException("Невозможно посчитать кол-во символов т.к. строка пустая");
+        }
     }
 
+    public int countSymbols(String str1) {
+        sravnenieStr1(str1);
+        return str1.replaceAll("\\s", "").length();
+    }
     public boolean isEquals(String str1, String str2) {
-        if (str1 == null || str2 == null) {
-            throw new IllegalArgumentException("Одна из строк пустая");
-        }
+        sravnenieStr(str1, str2);
         if (str1.equals(str2)) {
             System.out.println("Строки равны");
             return true;
@@ -26,12 +35,7 @@ public class ConcatString {
     }
 
     public String concat(String str1, String str2) {
-        if (str2 == null || str2.isEmpty()) {
-            throw new IllegalCallerException("Нельзя клеить т.к вторая строка пустая");
-        }
-        if (str1 == null || str1.isEmpty()) {
-            throw new IllegalCallerException("Нельзя клеить т.к первая строка пустая");
-        }
+        sravnenieStr(str1, str2);
         return str1.concat(str2);
     }
 
