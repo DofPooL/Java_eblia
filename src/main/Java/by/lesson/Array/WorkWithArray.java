@@ -6,13 +6,11 @@ import java.util.Random;
 public class WorkWithArray {
 
     public static void main(String[] args) {
-        //Сортировки, сортировка пузырьком, что дает static
         WorkWithArray workWithArray = new WorkWithArray();
         int[] arrayNumbers = workWithArray.generatorRandomNumbers(100);
         System.out.println(Arrays.toString(arrayNumbers));
         System.out.println(workWithArray.maxNumber(arrayNumbers));
         System.out.println(workWithArray.minNumber(arrayNumbers));
-        System.out.println(Arrays.toString(workWithArray.findMaxNumbers(arrayNumbers)));
     }
 
     private int maxNumber(int[] numberArray) {
